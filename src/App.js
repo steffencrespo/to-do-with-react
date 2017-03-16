@@ -26,9 +26,8 @@ class App extends Component {
           </form>
           <div className="Todo-List">
             <ul>
-              <li><input type="checkbox"/>Learn JSX</li>
-              <li><input type="checkbox"/>Build an awesome App</li>
-              <li><input type="checkbox"/>Ship it!</li>
+              {this.state.todos.map(todo =>
+                <li><input type="checkbox"/>{todo.name}</li>)}
             </ul>
           </div>
         </div>
