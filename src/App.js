@@ -3,6 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: [
+        {id: 1, name: 'Learn JSX', isComplete: false},
+        {id: 2, name: 'Build an awesome App', isComplete: false},
+        {id: 3, name: 'Ship it!', isComplete: false},
+      ]
+    }
+  }
   render() {
     return (
       <div className="App">
