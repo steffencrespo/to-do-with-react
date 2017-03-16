@@ -28,7 +28,7 @@ class App extends Component {
             <ul>
               {this.state.todos.map(todo =>
                 <li key={todo.id}>
-                  <input type="checkbox" checked={todo.isComplete}/>{todo.name}
+                  <input type="checkbox" defaultChecked={todo.isComplete}/>{todo.name}
                 </li>)}
             </ul>
           </div>
