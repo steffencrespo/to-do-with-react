@@ -10,9 +10,16 @@ class App extends Component {
         {id: 1, name: 'Learn JSX', isComplete: true},
         {id: 2, name: 'Build an awesome App', isComplete: false},
         {id: 3, name: 'Ship it!', isComplete: false},
-      ]
+      ],
+      currentTodo: ''
     }
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
+
+  handleInputChange(e) {
+    this.setState({currentTodo: e.target.value});
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,7 +29,7 @@ class App extends Component {
         </div>
         <div className="Todo-App">
           <form>
-            <input type="text" />
+            <input type="text" onChange={this.handleInputChange} value={this.state.currentTodo} />
           </form>
           <div className="Todo-List">
             <ul>
