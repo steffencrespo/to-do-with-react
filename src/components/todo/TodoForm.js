@@ -7,3 +7,8 @@ export const TodoForm = (props) => (
       value={props.currentTodo} />
   </form>
 )
+
+TodoForm.propTypes = {
+  currentTodo: React.PropTypes.string,
+  handleInputChange: React.PropTypes.func
+}
