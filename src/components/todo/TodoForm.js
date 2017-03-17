@@ -9,6 +9,6 @@ export const TodoForm = (props) => (
 )
 
 TodoForm.propTypes = {
-  currentTodo: React.PropTypes.string,
-  handleInputChange: React.PropTypes.func
+  currentTodo: React.PropTypes.string.isRequired,
+  handleInputChange: React.PropTypes.func.isRequired
 }
