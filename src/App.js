@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TodoForm, TodoList} from './components/todo';
+import {addTodo} from './lib/todohelpers';
 
 class App extends Component {
   constructor() {
@@ -15,6 +16,10 @@ class App extends Component {
       currentTodo: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleSubmit() {
+
   }
 
   handleInputChange(e) {
@@ -31,7 +36,8 @@ class App extends Component {
         <div className="Todo-App">
           <TodoForm
             handleInputChange={this.handleInputChange}
-            currentTodo={this.state.currentTodo} />
+            currentTodo={this.state.currentTodo}
+            handleSubmit={this.handleSubmit} />
           <TodoList todos={this.state.todos} />
         </div>
       </div>
