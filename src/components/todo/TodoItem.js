@@ -10,3 +10,9 @@ export const TodoItem = (props) => {
       {props.name}
     </li>)
 }
+
+TodoItem.propTypes = {
+  isComplete: React.PropTypes.bool,
+  name: React.PropTypes.string.isRequired,
+  id: React.PropTypes.number.isRequired
+}
