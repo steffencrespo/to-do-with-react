@@ -17,6 +17,7 @@ class App extends Component {
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEmptySubmit = this.handleEmptySubmit.bind(this);
   }
 
   handleSubmit(e) {
@@ -30,11 +31,19 @@ class App extends Component {
     })
   }
 
+  handleEmptySubmit(e) {
+    e.preventDefault();
+    this.setState({
+      errorMessage: 'Please supply a todo name'
+    })
+  }
+
   handleInputChange(e) {
     this.setState({currentTodo: e.target.value});
   }
 
   render() {
+    const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit;
     return (
       <div className="App">
         <div className="App-header">
@@ -45,7 +54,7 @@ class App extends Component {
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
-            handleSubmit={this.handleSubmit} />
+            handleSubmit={submitHandler} />
           <TodoList todos={this.state.todos} />
         </div>
       </div>
