@@ -27,7 +27,8 @@ class App extends Component {
     const updatedTodos = addTodo(this.state.todos, newTodo);
     this.setState({
       todos: updatedTodos,
-      currentTodo: ''
+      currentTodo: '',
+      errorMessage: ''
     })
   }
 
@@ -51,6 +52,7 @@ class App extends Component {
           <h2>React Todos</h2>
         </div>
         <div className="Todo-App">
+        {this.state.errorMessage && <span className='error'>{this.state.errorMessage}</span>}
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
