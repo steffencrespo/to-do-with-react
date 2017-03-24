@@ -1,4 +1,4 @@
-import {addTodo, findById} from './todohelpers'
+import {addTodo, findById, toggleTodo} from './todohelpers'
 
 test('addTodo should add the passed todo to the list', () => {
 
@@ -53,5 +53,27 @@ test('findById should return the expected item from an array', () => {
   const expected = {id: 2, name: 'two', isComplete: false};
   const result = findById(2, startTodos);
   expect(result).toEqual(expected);
+
+})
+
+test('toggleTodo should toggle the isComplete prop of a todo', () => {
+  const startTodo = {id: 2, name: 'two', isComplete: false};
+  const expected = {id: 2, name: 'two', isComplete: true};
+  const result = toggleTodo(startTodo);
+  expect(result).toEqual(expected);
+
+})
+
+test('toggleTodo should not mutate the original todo', () => {
+  const startTodo = {id: 2, name: 'two', isComplete: false};
+  const result = toggleTodo(startTodo);
+  expect(result).not.toBe(startTodo);
+})
+
+test.skip('', () => {
+
+})
+
+test.skip('', () => {
 
 })
