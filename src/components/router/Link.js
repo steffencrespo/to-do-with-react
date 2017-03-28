@@ -9,3 +9,7 @@ export class Link extends Component {
     return <a href="#" onClick={this.handleClick}>{this.props.children}</a>
   }
 }
+
+Link.propTypes = {
+  to: React.PropTypes.string.isRequired
+}
