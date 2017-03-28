@@ -14,6 +14,7 @@ export class Router extends Component {
     this.setState({route});
     history.pushState(null, '', route);
   }
+  
   render() {
     return <div>{this.props.children}</div>
   }
