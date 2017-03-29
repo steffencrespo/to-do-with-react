@@ -41,6 +41,8 @@ class App extends Component {
       currentTodo: '',
       errorMessage: ''
     })
+    createTodo(newTodo)
+      .then(() => console.log('New ToDo added!'));
   }
 
   handleToggle = (id) => {
