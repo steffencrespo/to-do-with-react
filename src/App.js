@@ -90,8 +90,8 @@ class App extends Component {
             currentTodo={this.state.currentTodo}
             handleSubmit={submitHandler} />
           <TodoList handleToggle={this.handleToggle}
-          todos={displayTodos}
-          handleRemove={this.handleRemove} />
+            todos={displayTodos}
+            handleRemove={this.handleRemove} />
           <Footer />
         </div>
       </div>
